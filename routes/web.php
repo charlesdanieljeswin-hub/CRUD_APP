@@ -1,14 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 
+// Redirect the blank home page straight to the Student module
+Route::get('/', function () {
+    return redirect()->route('students.index');
+});
 
+// This automatically handles Create, Read, Update, and Delete!
 Route::resource('students', StudentController::class);
 Route::resource('teachers', TeacherController::class);
-Route::get('/students', [StudentController::class, 'index']);
-Route::get('/students/create', [StudentController::class, 'create']);
-Route::post('/students/store', [StudentController::class, 'store']);
-Route::get('/students/edit/{id}', [StudentController::class, 'edit']);
-Route::post('/students/update/{id}', [StudentController::class, 'update']);
-Route::get('/students/delete/{id}', [StudentController::class, 'destroy']);

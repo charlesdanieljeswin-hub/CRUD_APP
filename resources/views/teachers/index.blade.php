@@ -2,8 +2,8 @@
 
 @section('content')
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1>All Students</h1>
-        <a href="{{ route('students.create') }}" style="padding: 10px 15px; background: #4f46e5; color: white; text-decoration: none; border-radius: 8px;">+ Add New Student</a>
+        <h1>All Teachers</h1>
+        <a href="{{ route('teachers.create') }}" style="padding: 10px 15px; background: #4f46e5; color: white; text-decoration: none; border-radius: 8px;">+ Add New Teacher</a>
     </div>
     <br>
 
@@ -11,17 +11,17 @@
         <tr style="background-color: #f4f6f9;">
             <th style="padding: 15px;">Name</th>
             <th style="padding: 15px;">Email</th>
-            <th style="padding: 15px;">Course</th>
+            <th style="padding: 15px;">Subject</th>
             <th style="padding: 15px;">Actions</th>
         </tr>
-        @foreach ($students as $student)
+        @foreach ($teachers as $teacher)
         <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 15px;">{{ $student->name }}</td>
-            <td style="padding: 15px;">{{ $student->email }}</td>
-            <td style="padding: 15px;">{{ $student->course }}</td>
+            <td style="padding: 15px;">{{ $teacher->name }}</td>
+            <td style="padding: 15px;">{{ $teacher->email }}</td>
+            <td style="padding: 15px;">{{ $teacher->subject }}</td>
             <td style="padding: 15px;">
-                <a href="{{ route('students.edit', $student->id) }}" style="color: blue; text-decoration: none;">Edit</a> |
-                <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
+                <a href="{{ route('teachers.edit', $teacher->id) }}" style="color: blue; text-decoration: none;">Edit</a> |
+                <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" style="color: red; border: none; background: none; cursor: pointer; font-size: 16px;">Delete</button>
