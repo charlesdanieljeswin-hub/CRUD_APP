@@ -56,7 +56,7 @@
 
 <div class="form-wrapper">
     <div class="container">
-        <h2 class="title">games</h2>
+        <h2 class="title">Add Student</h2>
         <form action="{{ route('students.store') }}" method="POST">
             @csrf
             <div class="input-group">
