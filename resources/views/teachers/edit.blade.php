@@ -65,25 +65,25 @@
 
 <div class="form-wrapper">
     <div class="container">
-        <h2 class="title">Edit Student</h2>
-        <form action="{{ route('students.update', $student->id) }}" method="POST">
+        <h2 class="title">Edit Teacher</h2>
+        <form action="{{ route('teachers.update', $teacher->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="input-group">
-                <label>Name</label>
-                <input type="text" name="name" value="{{ $student->name }}" placeholder="Enter Name" required>
+                <label>Teacher Name</label>
+                <input type="text" name="name" value="{{ $teacher->name }}" placeholder="Enter Name" required>
             </div>
             <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email" value="{{ $student->email }}" placeholder="Enter Email" required>
+                <label>Teacher Email</label>
+                <input type="email" name="email" value="{{ $teacher->email }}" placeholder="Enter Email" required>
             </div>
             <div class="input-group">
-                <label>Course</label>
-                <input type="text" name="course" value="{{ $student->course }}" placeholder="Enter Course" required>
+                <label>Subject Taught</label>
+                <input type="text" name="subject" value="{{ $teacher->subject }}" placeholder="Enter Subject" required>
             </div>
-            <button type="submit" class="btn">Update Student</button>
+            <button type="submit" class="btn">Update Teacher</button>
         </form>
-        <a href="{{ route('students.index') }}" class="btn-cancel">← Cancel & Go Back</a>
+        <a href="{{ route('teachers.index') }}" class="btn-cancel">← Cancel & Go Back</a>
     </div>
 </div>
 @endsection
